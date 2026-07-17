@@ -105,75 +105,76 @@
                     <i class="fa-solid fa-ticket text-sky-600"></i> 長榮航空 航班資訊
                 </h4>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <!-- 修改處：改為 grid-cols-2 強制在手機上維持左右並排，並微調 gap -->
+                <div class="grid grid-cols-2 gap-2 sm:gap-3">
                     <!-- 去程 BR164 -->
-                    <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white p-4 rounded-xl shadow-md border border-slate-800 relative overflow-hidden">
+                    <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white p-2.5 sm:p-4 rounded-xl shadow-md border border-slate-800 relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500/10 rounded-full blur-xl"></div>
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-[10px] bg-emerald-600 text-white px-2 py-0.5 rounded font-bold tracking-wider">去程 DEPARTURE</span>
-                            <span class="text-[10px] font-mono text-slate-300 font-bold">EVA AIR BR164</span>
+                        <div class="flex justify-between items-center mb-1.5">
+                            <span class="text-[8px] sm:text-[10px] bg-emerald-600 text-white px-1.5 py-0.5 rounded font-bold tracking-wider">去程 DEP</span>
+                            <span class="text-[8px] sm:text-[10px] font-mono text-slate-300 font-bold">BR164</span>
                         </div>
-                        <div class="flex justify-between items-center my-3">
+                        <div class="flex justify-between items-center my-2">
                             <div class="text-center">
-                                <p class="text-lg font-black tracking-wide font-mono">TPE</p>
-                                <p class="text-[10px] text-slate-400">台北桃園</p>
+                                <p class="text-base sm:text-lg font-black tracking-wide font-mono">TPE</p>
+                                <p class="text-[8px] sm:text-[10px] text-slate-400">桃園</p>
                             </div>
-                            <div class="flex flex-col items-center flex-1 px-4 relative">
-                                <span class="text-[9px] text-slate-400 font-mono mb-1">2h 20m</span>
+                            <div class="flex flex-col items-center flex-1 px-1 sm:px-4 relative">
+                                <span class="text-[8px] text-slate-400 font-mono mb-0.5">2h 20m</span>
                                 <div class="w-full border-t border-dashed border-slate-600 relative my-1">
-                                    <i class="fa-solid fa-plane text-xs absolute left-1/2 -top-[6px] -translate-x-1/2 text-sky-400 rotate-90"></i>
+                                    <i class="fa-solid fa-plane text-[10px] absolute left-1/2 -top-[6px] -translate-x-1/2 text-sky-400 rotate-90"></i>
                                 </div>
-                                <span class="text-[9px] text-emerald-400 font-bold mt-1">7/18 (六)</span>
+                                <span class="text-[8px] text-emerald-400 font-bold mt-0.5">7/18 (六)</span>
                             </div>
                             <div class="text-center">
-                                <p class="text-lg font-black tracking-wide font-mono">PUS</p>
-                                <p class="text-[10px] text-slate-400">釜山金海</p>
+                                <p class="text-base sm:text-lg font-black tracking-wide font-mono">PUS</p>
+                                <p class="text-[8px] sm:text-[10px] text-slate-400">釜山</p>
                             </div>
                         </div>
-                        <div class="flex justify-between border-t border-slate-800 pt-2.5 mt-2 text-xs">
+                        <div class="flex justify-between border-t border-slate-800 pt-2 mt-1.5 text-xs">
                             <div>
-                                <span class="text-[10px] text-slate-400 block">起飛</span>
-                                <span class="font-mono font-bold text-amber-400 text-sm">14:40</span>
+                                <span class="text-[8px] sm:text-[10px] text-slate-400 block">起飛</span>
+                                <span class="font-mono font-bold text-amber-400 text-xs sm:text-sm">14:40</span>
                             </div>
                             <div class="text-right">
-                                <span class="text-[10px] text-slate-400 block">降落</span>
-                                <span class="font-mono font-bold text-amber-400 text-sm">18:00</span>
+                                <span class="text-[8px] sm:text-[10px] text-slate-400 block">降落</span>
+                                <span class="font-mono font-bold text-amber-400 text-xs sm:text-sm">18:00</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 回程 BR163 -->
-                    <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white p-4 rounded-xl shadow-md border border-slate-800 relative overflow-hidden">
+                    <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white p-2.5 sm:p-4 rounded-xl shadow-md border border-slate-800 relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500/10 rounded-full blur-xl"></div>
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-[10px] bg-amber-600 text-white px-2 py-0.5 rounded font-bold tracking-wider">回程 RETURN</span>
-                            <span class="text-[10px] font-mono text-slate-300 font-bold">EVA AIR BR163</span>
+                        <div class="flex justify-between items-center mb-1.5">
+                            <span class="text-[8px] sm:text-[10px] bg-amber-600 text-white px-1.5 py-0.5 rounded font-bold tracking-wider">回程 RET</span>
+                            <span class="text-[8px] sm:text-[10px] font-mono text-slate-300 font-bold">BR163</span>
                         </div>
-                        <div class="flex justify-between items-center my-3">
+                        <div class="flex justify-between items-center my-2">
                             <div class="text-center">
-                                <p class="text-lg font-black tracking-wide font-mono">PUS</p>
-                                <p class="text-[10px] text-slate-400">釜山金海</p>
+                                <p class="text-base sm:text-lg font-black tracking-wide font-mono">PUS</p>
+                                <p class="text-[8px] sm:text-[10px] text-slate-400">釜山</p>
                             </div>
-                            <div class="flex flex-col items-center flex-1 px-4 relative">
-                                <span class="text-[9px] text-slate-400 font-mono mb-1">2h 25m</span>
+                            <div class="flex flex-col items-center flex-1 px-1 sm:px-4 relative">
+                                <span class="text-[8px] text-slate-400 font-mono mb-0.5">2h 25m</span>
                                 <div class="w-full border-t border-dashed border-slate-600 relative my-1">
-                                    <i class="fa-solid fa-plane text-xs absolute left-1/2 -top-[6px] -translate-x-1/2 text-sky-400 rotate-90"></i>
+                                    <i class="fa-solid fa-plane text-[10px] absolute left-1/2 -top-[6px] -translate-x-1/2 text-sky-400 rotate-90"></i>
                                 </div>
-                                <span class="text-[9px] text-emerald-400 font-bold mt-1">7/24 (五)</span>
+                                <span class="text-[8px] text-emerald-400 font-bold mt-0.5">7/24 (五)</span>
                             </div>
                             <div class="text-center">
-                                <p class="text-lg font-black tracking-wide font-mono">TPE</p>
-                                <p class="text-[10px] text-slate-400">台北桃園</p>
+                                <p class="text-base sm:text-lg font-black tracking-wide font-mono">TPE</p>
+                                <p class="text-[8px] sm:text-[10px] text-slate-400">桃園</p>
                             </div>
                         </div>
-                        <div class="flex justify-between border-t border-slate-800 pt-2.5 mt-2 text-xs">
+                        <div class="flex justify-between border-t border-slate-800 pt-2 mt-1.5 text-xs">
                             <div>
-                                <span class="text-[10px] text-slate-400 block">起飛</span>
-                                <span class="font-mono font-bold text-amber-400 text-sm">19:10</span>
+                                <span class="text-[8px] sm:text-[10px] text-slate-400 block">起飛</span>
+                                <span class="font-mono font-bold text-amber-400 text-xs sm:text-sm">19:10</span>
                             </div>
                             <div class="text-right">
-                                <span class="text-[10px] text-slate-400 block">降落</span>
-                                <span class="font-mono font-bold text-amber-400 text-sm">20:35</span>
+                                <span class="text-[8px] sm:text-[10px] text-slate-400 block">降落</span>
+                                <span class="font-mono font-bold text-amber-400 text-xs sm:text-sm">20:35</span>
                             </div>
                         </div>
                     </div>
