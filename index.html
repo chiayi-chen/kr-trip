@@ -51,6 +51,10 @@
             text-decoration: line-through;
             color: #a19593;
         }
+        /* 平滑滾動 */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body class="font-sans antialiased min-h-screen pb-12">
@@ -103,7 +107,21 @@
         </section>
 
 
-        <!-- ================= 2. 行程清單 (7天全部展開，無需切換) ================= -->
+        <!-- ================= 圖片款 D1~D7 快速導航按鍵區 ================= -->
+        <section id="day-navigation" class="sticky top-[73px] z-40 bg-[#f7f5f0] py-2">
+            <div class="bg-[#e5e5e5] rounded-2xl p-1.5 flex justify-between items-center shadow-inner">
+                <button onclick="scrollToDay('day1')" class="nav-btn bg-theme-primary text-white font-title font-bold text-sm px-4 py-2 rounded-xl transition-all flex-1 mx-0.5 text-center shadow-md">D1</button>
+                <button onclick="scrollToDay('day2')" class="nav-btn text-[#555555] font-title font-bold text-sm px-4 py-2 rounded-xl transition-all flex-1 mx-0.5 text-center">D2</button>
+                <button onclick="scrollToDay('day3')" class="nav-btn text-[#555555] font-title font-bold text-sm px-4 py-2 rounded-xl transition-all flex-1 mx-0.5 text-center">D3</button>
+                <button onclick="scrollToDay('day4')" class="nav-btn text-[#555555] font-title font-bold text-sm px-4 py-2 rounded-xl transition-all flex-1 mx-0.5 text-center">D4</button>
+                <button onclick="scrollToDay('day5')" class="nav-btn text-[#555555] font-title font-bold text-sm px-4 py-2 rounded-xl transition-all flex-1 mx-0.5 text-center">D5</button>
+                <button onclick="scrollToDay('day6')" class="nav-btn text-[#555555] font-title font-bold text-sm px-4 py-2 rounded-xl transition-all flex-1 mx-0.5 text-center">D6</button>
+                <button onclick="scrollToDay('day7')" class="nav-btn text-[#555555] font-title font-bold text-sm px-4 py-2 rounded-xl transition-all flex-1 mx-0.5 text-center">D7</button>
+            </div>
+        </section>
+
+
+        <!-- ================= 2. 行程清單 (7天全部展開，點選按鈕直接滾動直達) ================= -->
         <section id="itinerary-section" class="space-y-6">
             
             <h2 class="font-bold text-lg text-theme-primary flex items-center gap-2 px-1">
@@ -111,7 +129,7 @@
             </h2>
 
             <!-- ================= Day 1 ================= -->
-            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+            <div id="day1" class="day-section bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4 scroll-mt-36">
                 <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
                     <div class="flex items-center gap-2">
                         <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D1</span>
@@ -183,7 +201,7 @@
             </div>
 
             <!-- ================= Day 2 ================= -->
-            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+            <div id="day2" class="day-section bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4 scroll-mt-36">
                 <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
                     <div class="flex items-center gap-2">
                         <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D2</span>
@@ -259,7 +277,7 @@
             </div>
 
             <!-- ================= Day 3 ================= -->
-            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+            <div id="day3" class="day-section bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4 scroll-mt-36">
                 <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
                     <div class="flex items-center gap-2">
                         <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D3</span>
@@ -328,7 +346,7 @@
             </div>
 
             <!-- ================= Day 4 ================= -->
-            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+            <div id="day4" class="day-section bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4 scroll-mt-36">
                 <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
                     <div class="flex items-center gap-2">
                         <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D4</span>
@@ -401,7 +419,7 @@
             </div>
 
             <!-- ================= Day 5 ================= -->
-            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+            <div id="day5" class="day-section bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4 scroll-mt-36">
                 <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
                     <div class="flex items-center gap-2">
                         <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D5</span>
@@ -468,7 +486,7 @@
             </div>
 
             <!-- ================= Day 6 ================= -->
-            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+            <div id="day6" class="day-section bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4 scroll-mt-36">
                 <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
                     <div class="flex items-center gap-2">
                         <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D6</span>
@@ -540,7 +558,7 @@
             </div>
 
             <!-- ================= Day 7 ================= -->
-            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+            <div id="day7" class="day-section bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4 scroll-mt-36">
                 <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
                     <div class="flex items-center gap-2">
                         <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D7</span>
@@ -709,6 +727,44 @@
         function scrollToItinerary() {
             document.getElementById('itinerary-section').scrollIntoView({ behavior: 'smooth' });
         }
+
+        // 行程平滑滾動，並根據滾動位置高亮對應的按鈕
+        function scrollToDay(dayId) {
+            const target = document.getElementById(dayId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 當頁面滾動時，自動偵測目前在第幾天，並自動把對應按鈕切換為高亮橘色
+        window.addEventListener('scroll', () => {
+            const daySections = document.querySelectorAll('.day-section');
+            const navButtons = document.querySelectorAll('.nav-btn');
+            let currentDayId = '';
+
+            daySections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // 偵測目前滾動高度是否已經進入該天數區塊 (配合 scroll-mt 的 144px 偏移)
+                if (window.scrollY >= sectionTop - 150) {
+                    currentDayId = section.getAttribute('id');
+                }
+            });
+
+            if (currentDayId) {
+                const dayIndex = parseInt(currentDayId.replace('day', '')) - 1;
+                navButtons.forEach((btn, index) => {
+                    if (index === dayIndex) {
+                        // 當前天數：橘底白字
+                        btn.classList.add('bg-theme-primary', 'text-white', 'shadow-md');
+                        btn.classList.remove('text-[#555555]');
+                    } else {
+                        // 其他天數：無底暗灰字
+                        btn.classList.remove('bg-theme-primary', 'text-white', 'shadow-md');
+                        btn.classList.add('text-[#555555]');
+                    }
+                });
+            }
+        });
 
         // 行李清單自動記憶功能 (LocalStorage)
         document.addEventListener("DOMContentLoaded", function() {
