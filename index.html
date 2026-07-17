@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>釜山 7天6夜 自由行手冊</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Noto Sans TC & Baloo 2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght=600;800&family=Noto+Sans+TC:wght=400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome 圖標 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                        title: ['"Baloo 2"', '"Noto Sans TC"', 'sans-serif'],
+                    },
+                    colors: {
+                        theme: {
+                            bg: '#f7f5f0',        /* 暖米色背景 */
+                            card: '#ffffff',      /* 純白卡片 */
+                            primary: '#a35213',   /* 經典暖橘棕色 */
+                            primaryHover: '#8a410e',
+                            secondary: '#e6dfd3', /* 淺灰褐分隔色 */
+                            textDark: '#4a3e3d',  /* 深炭啡字體 */
+                            textMuted: '#8c7e7c', /* 柔和灰褐字體 */
+                            badgeBg: '#f0ebe1',   /* 淺米色標籤背景 */
+                        },
+                        naver: {
+                            500: '#03C75A',
+                            600: '#02b350',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f7f5f0;
+            color: #4a3e3d;
+        }
+        /* 行李清單勾選樣式 */
+        .pack-checkbox:checked + span {
+            text-decoration: line-through;
+            color: #a19593;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen pb-12">
+
+    <!-- 頂部 Header -->
+    <header class="border-b border-theme-secondary bg-white sticky top-0 z-50 shadow-sm">
+        <div class="max-w-3xl mx-auto px-4 py-4 flex flex-col items-center gap-1">
+            <div class="flex items-center gap-3">
+                <div class="bg-theme-primary text-white p-2 rounded-xl shadow-sm">
+                    <i class="fa-solid fa-plane-departure text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-title font-black text-xl tracking-wide text-theme-textDark">釜山行．海景美食購物</h1>
+                    <p class="text-[11px] text-theme-textMuted font-medium"><i class="fa-regular fa-calendar mr-1"></i> 2026/07/18 (六) - 07/24 (五)</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主體內容 (單欄式完美適配手機) -->
+    <main class="max-w-2xl mx-auto px-4 mt-4 space-y-5">
+
+        <!-- ================= 1. 當天天氣資訊 & 刷卡資訊 ================= -->
+        <section id="weather-section" class="bg-sky-50 rounded-2xl p-4 border border-sky-100 shadow-sm space-y-3">
+            <div class="flex justify-between items-center">
+                <h3 class="font-bold text-sky-900 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-cloud-sun text-sky-600 text-base"></i> 釜山即時氣象資訊
+                </h3>
+                <a href="https://www.kma.go.kr/chn/" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white text-center text-[11px] font-bold py-1 px-3 rounded-lg flex items-center gap-1 transition-colors">
+                    <i class="fa-solid fa-language"></i> 韓國氣象廳 (中文網)
+                </a>
+            </div>
+            
+            <!-- 天氣看板 -->
+            <div class="bg-white/80 rounded-xl p-3 flex items-center justify-between border border-sky-100/50">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">☀️</span>
+                    <div>
+                        <p class="text-xs font-bold text-sky-900">釜山 7 月均溫預估</p>
+                        <p class="text-[11px] text-sky-700">均溫：23°C ~ 29°C | 建議攜帶薄外套防風防曬</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 行動支付與刷卡速查 (移動到天氣預報下方) -->
+            <div class="bg-white/60 rounded-xl p-2.5 border border-sky-100/50 flex flex-wrap gap-1.5 justify-center">
+                <span class="bg-emerald-50 text-emerald-800 text-[10px] font-bold px-2 py-1 rounded-lg border border-emerald-100">LINE PAY / 永豐大戶</span>
+                <span class="bg-blue-50 text-blue-800 text-[10px] font-bold px-2 py-1 rounded-lg border border-blue-100">台新黑狗 / 國泰Cube</span>
+            </div>
+        </section>
+
+
+        <!-- ================= 2. 行程清單 (7天全部展開，無需切換) ================= -->
+        <section id="itinerary-section" class="space-y-6">
+            
+            <h2 class="font-bold text-lg text-theme-primary flex items-center gap-2 px-1">
+                <i class="fa-solid fa-map-marked-alt"></i> 每日行程明細
+            </h2>
+
+            <!-- ================= Day 1 ================= -->
+            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+                <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D1</span>
+                        <span class="font-bold text-sm text-theme-textDark">7/18 (六) 出發與廣安里夜景</span>
+                    </div>
+                </div>
+                
+                <!-- D1 注意事項 -->
+                <div class="bg-amber-50/60 rounded-xl p-3 border border-amber-100 space-y-2">
+                    <p class="text-xs font-bold text-amber-900"><i class="fa-solid fa-triangle-exclamation mr-1"></i> 今日必帶與重要動線：</p>
+                    <p class="text-[11px] text-amber-800 leading-relaxed pl-3">
+                        • 護照、eSIM、簽證、萬能插頭、行動電源 (貼電火布+夾鏈袋)<br>
+                        • Gate 3 門旁兌換 Visit Busan Pass 卡[cite: 1]<br>
+                        • 機場 MONEY BOX：出 Gate 3 過馬路向右直走往輕軌方向約 200 公尺，左手邊可見換錢所[cite: 1]
+                    </p>
+                </div>
+
+                <!-- D1 住宿 -->
+                <div class="bg-theme-badgeBg/50 rounded-xl p-3 border border-theme-secondary flex justify-between items-center">
+                    <div>
+                        <span class="bg-theme-primary text-white text-[9px] font-bold px-1.5 py-0.5 rounded">今日住宿</span>
+                        <p class="font-bold text-xs text-theme-textDark mt-1">Gwangan Beach house (廣安里)</p>
+                    </div>
+                    <a href="https://naver.me/GM3pfin7" target="_blank" class="bg-naver-500 text-white text-[10px] font-bold py-1 px-2.5 rounded-lg flex items-center gap-1"><i class="fa-solid fa-map-location-dot"></i> Naver Map</a>
+                </div>
+
+                <!-- D1 時間軸 -->
+                <div class="relative border-l-2 border-theme-secondary pl-4 ml-2 space-y-4 text-xs">
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">10:00 - 11:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">10:00 出發 大園區南港里民活動中心</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">11:00 - 12:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">當肯接送至機場 B1 吃麥當勞</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">12:00 - 13:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">12:40 Check-In</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">13:00 - 14:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">遊戲室</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">14:00 - 18:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">第2航廈 長榮 14:40 - 18:00 BR164</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">19:00 - 20:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">搭 UBER 至廣安里飯店</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">20:00 - 21:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">飯店 Check-In</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">21:00 - 22:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>廣安제일분식 (飯卷、辣炒年糕、豆腐鍋)</span>
+                            <a href="https://naver.me/FyAvsLGd" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">22:00 - 23:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">廣安里海灘 無人機表演</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= Day 2 ================= -->
+            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+                <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D2</span>
+                        <span class="font-bold text-sm text-theme-textDark">7/19 (日) 廣安里美食與百貨購物</span>
+                    </div>
+                </div>
+                
+                <!-- D2 注意事項 -->
+                <div class="bg-amber-50/60 rounded-xl p-3 border border-amber-100 space-y-2">
+                    <p class="text-xs font-bold text-amber-900"><i class="fa-solid fa-triangle-exclamation mr-1"></i> 今日備忘：</p>
+                    <p class="text-[11px] text-amber-800 leading-relaxed pl-3">
+                        • 在新世界百貨買隔天早餐麵包備戰。<br>
+                        • 新世界百貨退稅：3F Under Armour 旁，或 B2 置物櫃旁(half咖啡店旁)。
+                    </p>
+                </div>
+
+                <!-- D2 住宿 -->
+                <div class="bg-theme-badgeBg/50 rounded-xl p-3 border border-theme-secondary flex justify-between items-center">
+                    <div>
+                        <span class="bg-theme-primary text-white text-[9px] font-bold px-1.5 py-0.5 rounded">今日住宿</span>
+                        <p class="font-bold text-xs text-theme-textDark mt-1">W飯店 (櫃台在3樓、放行李)</p>
+                    </div>
+                </div>
+
+                <!-- D2 時間軸 -->
+                <div class="relative border-l-2 border-theme-secondary pl-4 ml-2 space-y-4 text-xs">
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">09:00 - 10:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>All Sunday 貝果 (廣安里)</span>
+                            <a href="https://naver.me/G4dRugPv" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">10:00 - 11:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">飯店退房</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">11:00 - 12:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">散步去烤肉店</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">12:00 - 13:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>Gwanganmok Gwanagan 燒烤</span>
+                            <a href="https://naver.me/5c8kdiDb" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">13:00 - 14:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">新飯店寄放行李</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">14:00 - 16:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>新世界百貨公司 + 樂天百貨</span>
+                            <a href="https://naver.me/GDQCBPRh" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">16:00 - 19:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">巨大牛肉湯飯 (新世界 B1 美食街)</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">19:00 - 20:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">買三進魚糕或麵包當隔天早餐</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">21:00 - 22:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">橋村炸雞</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= Day 3 ================= -->
+            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+                <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D3</span>
+                        <span class="font-bold text-sm text-theme-textDark">7/20 (一) 藝術美術館與海上纜車</span>
+                    </div>
+                </div>
+                
+                <!-- D3 注意事項 -->
+                <div class="bg-amber-50/60 rounded-xl p-3 border border-amber-100 space-y-2">
+                    <p class="text-xs font-bold text-amber-900"><i class="fa-solid fa-triangle-exclamation mr-1"></i> 今日備忘：</p>
+                    <p class="text-[11px] text-amber-800 leading-relaxed pl-3">
+                        • 請穿素色衣服，在 ARTE MUSEUM 拍照效果最佳。<br>
+                        • 明星一隻雞推薦加點刀切麵、粥或牛奶。<br>
+                        • 纜車下車處：買明信片在 1 樓，寄明信片在 3 樓。
+                    </p>
+                </div>
+
+                <!-- D3 住宿 -->
+                <div class="bg-theme-badgeBg/50 rounded-xl p-3 border border-theme-secondary flex justify-between items-center">
+                    <div>
+                        <span class="bg-theme-primary text-white text-[9px] font-bold px-1.5 py-0.5 rounded">今日住宿</span>
+                        <p class="font-bold text-xs text-theme-textDark mt-1">W住宅酒店 Centum 城市</p>
+                    </div>
+                    <a href="https://naver.me/5mvlbZCC" target="_blank" class="bg-naver-500 text-white text-[10px] font-bold py-1 px-2.5 rounded-lg flex items-center gap-1"><i class="fa-solid fa-map-location-dot"></i> Naver Map</a>
+                </div>
+
+                <!-- D3 時間軸 -->
+                <div class="relative border-l-2 border-theme-secondary pl-4 ml-2 space-y-4 text-xs">
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">08:00 - 10:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">早餐：吃買回來的麵包/煎牛肉配餐包</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">10:00 - 11:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">路程 45分</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">11:00 - 13:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>明星一隻雞</span>
+                            <a href="https://naver.me/FAA9CDEa" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">13:00 - 16:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>ARTE MUSEUM (穿素色衣)</span>
+                            <a href="https://naver.me/574ykqng" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">16:00 - 19:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>松島海上纜車 & 龍宮雲橋</span>
+                            <a href="https://naver.me/FvTzJUTp" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">19:00 - 20:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>壽司 (스시 마이우 센텀점)</span>
+                            <a href="https://naver.me/xY4666Wc" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= Day 4 ================= -->
+            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+                <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D4</span>
+                        <span class="font-bold text-sm text-theme-textDark">7/21 (二) 海雲台美食與鑽石灣遊艇</span>
+                    </div>
+                </div>
+                
+                <!-- D4 注意事項 -->
+                <div class="bg-amber-50/60 rounded-xl p-3 border border-amber-100 space-y-2">
+                    <p class="text-xs font-bold text-amber-900"><i class="fa-solid fa-triangle-exclamation mr-1"></i> 今日備忘：</p>
+                    <p class="text-[11px] text-amber-800 leading-relaxed pl-3">
+                        • <strong>重要時間</strong>：17點10分前務必搭上計程車！18:00遊艇報到，18:30鑽石灣遊艇啟航。
+                    </p>
+                </div>
+
+                <!-- D4 住宿 -->
+                <div class="bg-theme-badgeBg/50 rounded-xl p-3 border border-theme-secondary flex justify-between items-center">
+                    <div>
+                        <span class="bg-theme-primary text-white text-[9px] font-bold px-1.5 py-0.5 rounded">今日住宿</span>
+                        <p class="font-bold text-xs text-theme-textDark mt-1">W住宅酒店 Centum 城市 (續住)</p>
+                    </div>
+                </div>
+
+                <!-- D4 時間軸 -->
+                <div class="relative border-l-2 border-theme-secondary pl-4 ml-2 space-y-4 text-xs">
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">08:00 - 09:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>自然島鹽麵包 (海雲台店)</span>
+                            <a href="https://naver.me/xY9nnYQ4" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">09:00 - 10:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>大海鮑魚粥</span>
+                            <a href="https://naver.me/xUZe6AxN" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">10:00 - 11:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>老虎冰淇淋大福</span>
+                            <a href="https://naver.me/x0OL9Cvr" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">11:00 - 13:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>海雲台 LCT X the SKY 觀景台</span>
+                            <a href="https://naver.me/GgWVVn2y" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">13:00 - 15:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>伍班長烤肉</span>
+                            <a href="https://naver.me/xZKoBzRm" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative bg-amber-50/35 p-2.5 rounded-xl border border-amber-100">
+                        <span class="font-bold text-amber-800">15:00 - 18:30 (關鍵卡點)</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>往鑽石灣遊艇碼頭 (17:10 前需搭上車)</span>
+                            <a href="https://naver.me/GGGeHpVH" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                        <p class="text-[11px] text-amber-700 mt-1">⚠️ 18:00遊艇報到，18:30鑽石灣遊艇 (已預約)。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= Day 5 ================= -->
+            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+                <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D5</span>
+                        <span class="font-bold text-sm text-theme-textDark">7/22 (三) 斜坡滑車與樂天世界</span>
+                    </div>
+                </div>
+                
+                <!-- D5 注意事項 -->
+                <div class="bg-amber-50/60 rounded-xl p-3 border border-amber-100 space-y-2">
+                    <p class="text-xs font-bold text-amber-900"><i class="fa-solid fa-triangle-exclamation mr-1"></i> 今日備忘：</p>
+                    <p class="text-[11px] text-amber-800 leading-relaxed pl-3">
+                        • 樂天世界人潮多，需提早排隊換票。<br>
+                        • 進園可直衝「軌道送餐餐廳」用餐；「會說話的樹」為拍照地標。
+                    </p>
+                </div>
+
+                <!-- D5 住宿 -->
+                <div class="bg-theme-badgeBg/50 rounded-xl p-3 border border-theme-secondary flex justify-between items-center">
+                    <div>
+                        <span class="bg-theme-primary text-white text-[9px] font-bold px-1.5 py-0.5 rounded">今日住宿</span>
+                        <p class="font-bold text-xs text-theme-textDark mt-1">W住宅酒店 Centum 城市 (續住)</p>
+                    </div>
+                </div>
+
+                <!-- D5 時間軸 -->
+                <div class="relative border-l-2 border-theme-secondary pl-4 ml-2 space-y-4 text-xs">
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">08:00 - 10:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">提早出發排隊換票</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">10:00 - 12:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>Skyline Luge 釜山斜坡滑車</span>
+                            <a href="https://naver.me/5ulyZNVn" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">12:00 - 15:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>釜山樂天世界 (含積木樂園)</span>
+                            <a href="https://naver.me/51uPweJg" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">15:00 - 17:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>小香牛肋排 (Sohyang Galbi)</span>
+                            <a href="https://naver.me/xY9nkY9j" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">17:00 - 21:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>海雲台大街散步 (Busandang 買隔天麵包)</span>
+                            <a href="https://naver.me/xD86rFp5" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">21:00+</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">60 雞肉 (海雲台店)</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= Day 6 ================= -->
+            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+                <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D6</span>
+                        <span class="font-bold text-sm text-theme-textDark">7/23 (四) 南浦洞醫美與棉被購物</span>
+                    </div>
+                </div>
+                
+                <!-- D6 注意事項 -->
+                <div class="bg-amber-50/60 rounded-xl p-3 border border-amber-100 space-y-2">
+                    <p class="text-xs font-bold text-amber-900"><i class="fa-solid fa-triangle-exclamation mr-1"></i> 今日備忘：</p>
+                    <p class="text-[11px] text-amber-800 leading-relaxed pl-3">
+                        • 樂天超市消費滿 10 萬韓元可獲贈大容量購物袋。<br>
+                        • 買暖呼呼棉被可前往國際市場尋找 168號 或 大明 棉被店。
+                    </p>
+                </div>
+
+                <!-- D6 住宿 -->
+                <div class="bg-theme-badgeBg/50 rounded-xl p-3 border border-theme-secondary flex justify-between items-center">
+                    <div>
+                        <span class="bg-theme-primary text-white text-[9px] font-bold px-1.5 py-0.5 rounded">今日住宿</span>
+                        <p class="font-bold text-xs text-theme-textDark mt-1">弗萊特普瑞米爾南浦酒店</p>
+                    </div>
+                    <a href="https://naver.me/5FDPtQ91" target="_blank" class="bg-naver-500 text-white text-[10px] font-bold py-1 px-2.5 rounded-lg flex items-center gap-1"><i class="fa-solid fa-map-location-dot"></i> Naver Map</a>
+                </div>
+
+                <!-- D6 時間軸 -->
+                <div class="relative border-l-2 border-theme-secondary pl-4 ml-2 space-y-4 text-xs">
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">09:00 - 10:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">退房並轉往南浦洞</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">10:00 - 12:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>醫美-米達姆診所</span>
+                            <a href="https://naver.me/5wrdtwv6" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">12:00 - 13:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">南浦飯店寄放行李</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">13:00 - 14:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>李在模披薩總店</span>
+                            <a href="https://naver.me/GfrwRnMY" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">14:00 - 17:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>買棉被 (168號或大明) + 大創</span>
+                            <a href="https://naver.me/x7eiw5Wv" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">17:00 - 19:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>樂天百貨光復店 & 紅油抄手炸醬麵</span>
+                            <a href="https://naver.me/x7n0V062" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">19:00 - 21:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">樂天百貨光復店頂樓夜景</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= Day 7 ================= -->
+            <div class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+                <div class="flex justify-between items-center border-b border-theme-secondary pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-theme-primary text-white font-title font-black text-sm px-2.5 py-1 rounded-xl">D7</span>
+                        <span class="font-bold text-sm text-theme-textDark">7/24 (五) 魚市現撈海鮮與返台</span>
+                    </div>
+                </div>
+                
+                <!-- D7 注意事項 -->
+                <div class="bg-amber-50/60 rounded-xl p-3 border border-amber-100 space-y-2">
+                    <p class="text-xs font-bold text-amber-900"><i class="fa-solid fa-triangle-exclamation mr-1"></i> 今日備忘：</p>
+                    <p class="text-[11px] text-amber-800 leading-relaxed pl-3">
+                        • 札嘎其新東亞海鮮市場直上 2 樓，尋找 8 號、85 號或 87 號攤位吃海鮮！
+                    </p>
+                </div>
+
+                <!-- D7 時間軸 -->
+                <div class="relative border-l-2 border-theme-secondary pl-4 ml-2 space-y-4 text-xs">
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">08:00 - 09:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>EGG DROP (南浦店)</span>
+                            <a href="https://naver.me/xUZe674H" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">09:00 - 10:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>EGG 隔壁的蛋塔店</span>
+                            <a href="https://naver.me/FHOlKryY" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">10:00 - 11:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">Olive Young 旗艦店 (光復分店)</h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">11:00 - 13:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
+                            <span>新東亞水產市場 (扎嘎其)</span>
+                            <a href="https://naver.me/G6ye0vK4" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span class="font-bold text-theme-primary">13:00 - 15:00</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">BIFF廣場與堅果糖餅</h4>
+                    </div>
+                    <div class="relative bg-amber-50/35 p-2.5 rounded-xl border border-amber-100">
+                        <span class="font-bold text-amber-800">15:00 啟程往機場</span>
+                        <h4 class="font-bold text-sm mt-0.5 text-theme-textDark">金海國際機場 (退稅、辦托運)</h4>
+                        <p class="text-[11px] text-amber-700 mt-1">✈️ 長榮航空 19:10 - 20:35 BR163 返抵台灣[cite: 1]。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= 3. 行李打包清單 ================= -->
+        <section id="luggage-section" class="bg-white rounded-3xl p-5 border border-theme-secondary shadow-sm space-y-4">
+            <div class="flex justify-between items-center">
+                <h2 class="font-bold text-lg text-theme-primary flex items-center gap-2">
+                    <i class="fa-solid fa-suitcase-rolling"></i> 行理打包確認
+                </h2>
+                <span class="text-[10px] bg-theme-badgeBg text-theme-textMuted font-bold px-2 py-0.5 rounded">進度自動存檔</span>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- 分類1: 流浪包 S -->
+                <div class="bg-amber-50/30 p-4 rounded-2xl border border-amber-100">
+                    <h3 class="font-bold text-sm text-amber-800 mb-3 flex justify-between">
+                        <span>🎒 流浪包 S (隨身)</span>
+                        <span class="text-[10px] text-amber-600/70">隨身攜帶</span>
+                    </h3>
+                    <div class="space-y-2 text-xs">
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-theme-primary border-slate-300" id="bag1-1"><span>行動電源(黑+杏) ×2 <span class="text-[10px] text-theme-textMuted">(貼電火布+夾鏈袋)</span></span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-theme-primary border-slate-300" id="bag1-2"><span>充電線 ×2</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-theme-primary border-slate-300" id="bag1-3"><span>手持小風扇 ×4</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-theme-primary border-slate-300" id="bag1-4"><span>水壺 ×2+1</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-theme-primary border-slate-300" id="bag1-5"><span>衛生紙</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-theme-primary border-slate-300" id="bag1-6"><span>濕紙巾</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-theme-primary border-slate-300" id="bag1-7"><span>iPad <span class="text-[10px] text-theme-textMuted">(下載影片)</span></span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-theme-primary border-slate-300" id="bag1-8"><span>薄外套 ×4</span></label>
+                    </div>
+                </div>
+
+                <!-- 分類2: 藍色後背包 -->
+                <div class="bg-blue-50/30 p-4 rounded-2xl border border-blue-100">
+                    <h3 class="font-bold text-sm text-blue-900 mb-3 flex justify-between">
+                        <span>🎒 藍色後背包</span>
+                        <span class="text-[10px] text-blue-600/70">重要證件</span>
+                    </h3>
+                    <div class="space-y-2 text-xs">
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-blue-600 border-slate-300" id="bag2-1"><span>護照 ×4</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-blue-600 border-slate-300" id="bag2-2"><span>簽證 ×4 <span class="text-[10px] text-theme-textMuted">(劃位後才能填)</span></span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-blue-600 border-slate-300" id="bag2-3"><span>太陽眼鏡 ×4</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-blue-600 border-slate-300" id="bag2-4"><span>購物袋</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-blue-600 border-slate-300" id="bag2-5"><span>藍牙耳機</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-blue-600 border-slate-300" id="bag2-6"><span>餐具 ×4</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-blue-600 border-slate-300" id="bag2-7"><span>酒精</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-blue-600 border-slate-300" id="bag2-8"><span>原子筆</span></label>
+                    </div>
+                </div>
+
+                <!-- 分類3: 橘色大行李箱 -->
+                <div class="bg-orange-50/30 p-4 rounded-2xl border border-orange-100">
+                    <h3 class="font-bold text-sm text-orange-900 mb-3 flex justify-between">
+                        <span>🧳 橘色大行李箱</span>
+                        <span class="text-[10px] text-orange-600/70">托運</span>
+                    </h3>
+                    <div class="space-y-2 text-xs">
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-1"><span>變壓器</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-2"><span>藥品 <span class="text-[10px] text-red-500 font-bold">(禁止帶EVA)</span></span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-3"><span>維他命</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-4"><span>衛生紙</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-5"><span>濕紙巾</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-6"><span>防曬乳 ×2</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-7"><span>防蚊液 ×1</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-8"><span>安撫棉被 ×2</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-9"><span>行李袋 ×1</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-10"><span>防尿裙 ×2</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-11"><span>牙刷牙膏包</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-12"><span>隱形眼鏡 / 眼鏡</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-13"><span>化妝包</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-14"><span>髮油</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-15"><span>行李秤</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-16"><span>豆腐頭 ×3</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-17"><span>內褲 / 衣服 / 襪子 / 帽子</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-18"><span>洗衣網 / 洗衣球 / 洗碗精</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-19"><span>水壺清潔 / 髮夾髮圈</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-orange-600 border-slate-300" id="bag3-20"><span>AIR TAG</span></label>
+                    </div>
+                </div>
+
+                <!-- 分類4: 灰色大行李箱 -->
+                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200">
+                    <h3 class="font-bold text-sm text-gray-800 mb-3 flex justify-between">
+                        <span>🧳 灰色大行李箱</span>
+                        <span class="text-[10px] text-gray-500">托運</span>
+                    </h3>
+                    <div class="space-y-2 text-xs">
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-gray-600 border-slate-300" id="bag4-1"><span>登機箱</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-gray-600 border-slate-300" id="bag4-2"><span>折疊雨傘 ×2</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="pack-checkbox rounded text-gray-600 border-slate-300" id="bag4-3"><span>AIR TAG</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 回到每日行程按鍵 -->
+            <div class="pt-4 border-t border-theme-secondary/50 flex justify-center">
+                <button onclick="scrollToItinerary()" class="bg-theme-primary hover:bg-theme-primaryHover text-white font-bold text-xs py-3 px-6 rounded-xl shadow-md flex items-center gap-2 transition-all active:scale-95">
+                    <i class="fa-solid fa-arrow-up"></i> 返回每日行程
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 底部 Footer -->
+    <footer class="mt-12 py-8 text-center text-theme-textMuted text-[10px] border-t border-theme-secondary">
+        <p class="font-title font-bold text-theme-textDark text-xs mb-1">🌊 Enjoy your Busan Trip! 7/18 - 7/24</p>
+        <p>行動版自適應手冊 · 打包清單自動存檔</p>
+    </footer>
+
+    <!-- JavaScript 功能 -->
+    <script>
+        // 滾動回行程區首頁
+        function scrollToItinerary() {
+            document.getElementById('itinerary-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 行李清單自動記憶功能 (LocalStorage)
+        document.addEventListener("DOMContentLoaded", function() {
+            const checkboxes = document.querySelectorAll('.pack-checkbox');
+            
+            checkboxes.forEach(box => {
+                const savedStatus = localStorage.getItem(box.id);
+                if (savedStatus === 'true') {
+                    box.checked = true;
+                }
+                
+                box.addEventListener('change', function() {
+                    localStorage.setItem(box.id, box.checked);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
