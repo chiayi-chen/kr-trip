@@ -99,82 +99,84 @@
                 </div>
             </div>
 
-            <!-- 航班資訊 (類似圖片樣式，去程與回程並排/上下呈現) -->
+            <!-- 航班資訊 (極致壓縮優化版：強制極窄螢幕完美並排) -->
             <div class="space-y-2.5">
                 <h4 class="text-xs font-bold text-sky-900 flex items-center gap-1.5 px-1 mt-1">
                     <i class="fa-solid fa-ticket text-sky-600"></i> 長榮航空 航班資訊
                 </h4>
                 
-                <!-- 修改處：改為 grid-cols-2 強制在手機上維持左右並排，並微調 gap -->
-                <div class="grid grid-cols-2 gap-2 sm:gap-3">
+                <!-- 調整點：grid-cols-2 強制並排，gap-1.5 避免擠壓 -->
+                <div class="grid grid-cols-2 gap-1.5 sm:gap-3">
                     <!-- 去程 BR164 -->
-                    <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white p-2.5 sm:p-4 rounded-xl shadow-md border border-slate-800 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500/10 rounded-full blur-xl"></div>
-                        <div class="flex justify-between items-center mb-1.5">
-                            <span class="text-[8px] sm:text-[10px] bg-emerald-600 text-white px-1.5 py-0.5 rounded font-bold tracking-wider">去程 DEP</span>
-                            <span class="text-[8px] sm:text-[10px] font-mono text-slate-300 font-bold">BR164</span>
-                        </div>
-                        <div class="flex justify-between items-center my-2">
-                            <div class="text-center">
-                                <p class="text-base sm:text-lg font-black tracking-wide font-mono">TPE</p>
-                                <p class="text-[8px] sm:text-[10px] text-slate-400">桃園</p>
+                    <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white p-2 sm:p-4 rounded-xl shadow-md border border-slate-800 relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-[8px] bg-emerald-600 text-white px-1 py-0.5 rounded font-bold tracking-wider scale-90 origin-left">去程 DEP</span>
+                                <span class="text-[9px] font-mono text-slate-300 font-bold">BR164</span>
                             </div>
-                            <div class="flex flex-col items-center flex-1 px-1 sm:px-4 relative">
-                                <span class="text-[8px] text-slate-400 font-mono mb-0.5">2h 20m</span>
-                                <div class="w-full border-t border-dashed border-slate-600 relative my-1">
-                                    <i class="fa-solid fa-plane text-[10px] absolute left-1/2 -top-[6px] -translate-x-1/2 text-sky-400 rotate-90"></i>
+                            <div class="flex justify-between items-center my-1.5">
+                                <div class="text-center">
+                                    <p class="text-sm sm:text-lg font-black font-mono tracking-tighter">TPE</p>
+                                    <p class="hidden sm:block text-[10px] text-slate-400">桃園</p>
                                 </div>
-                                <span class="text-[8px] text-emerald-400 font-bold mt-0.5">7/18 (六)</span>
-                            </div>
-                            <div class="text-center">
-                                <p class="text-base sm:text-lg font-black tracking-wide font-mono">PUS</p>
-                                <p class="text-[8px] sm:text-[10px] text-slate-400">釜山</p>
+                                <div class="flex flex-col items-center flex-1 px-0.5 relative min-w-[35px]">
+                                    <span class="text-[7px] text-slate-400 font-mono scale-90">2h 20m</span>
+                                    <div class="w-full border-t border-dashed border-slate-600 relative my-0.5">
+                                        <i class="fa-solid fa-plane text-[8px] absolute left-1/2 -top-[5px] -translate-x-1/2 text-sky-400 rotate-90"></i>
+                                    </div>
+                                    <span class="text-[7px] text-emerald-400 font-bold scale-90">7/18(六)</span>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-sm sm:text-lg font-black font-mono tracking-tighter">PUS</p>
+                                    <p class="hidden sm:block text-[10px] text-slate-400">釜山</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex justify-between border-t border-slate-800 pt-2 mt-1.5 text-xs">
+                        <div class="flex justify-between border-t border-slate-800 pt-1.5 mt-1 text-[10px]">
                             <div>
-                                <span class="text-[8px] sm:text-[10px] text-slate-400 block">起飛</span>
-                                <span class="font-mono font-bold text-amber-400 text-xs sm:text-sm">14:40</span>
+                                <span class="text-[7px] text-slate-400 block scale-90 origin-left">起飛</span>
+                                <span class="font-mono font-bold text-amber-400 text-xs">14:40</span>
                             </div>
                             <div class="text-right">
-                                <span class="text-[8px] sm:text-[10px] text-slate-400 block">降落</span>
-                                <span class="font-mono font-bold text-amber-400 text-xs sm:text-sm">18:00</span>
+                                <span class="text-[7px] text-slate-400 block scale-90 origin-right">降落</span>
+                                <span class="font-mono font-bold text-amber-400 text-xs">18:00</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 回程 BR163 -->
-                    <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white p-2.5 sm:p-4 rounded-xl shadow-md border border-slate-800 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500/10 rounded-full blur-xl"></div>
-                        <div class="flex justify-between items-center mb-1.5">
-                            <span class="text-[8px] sm:text-[10px] bg-amber-600 text-white px-1.5 py-0.5 rounded font-bold tracking-wider">回程 RET</span>
-                            <span class="text-[8px] sm:text-[10px] font-mono text-slate-300 font-bold">BR163</span>
-                        </div>
-                        <div class="flex justify-between items-center my-2">
-                            <div class="text-center">
-                                <p class="text-base sm:text-lg font-black tracking-wide font-mono">PUS</p>
-                                <p class="text-[8px] sm:text-[10px] text-slate-400">釜山</p>
+                    <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white p-2 sm:p-4 rounded-xl shadow-md border border-slate-800 relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-[8px] bg-amber-600 text-white px-1 py-0.5 rounded font-bold tracking-wider scale-90 origin-left">回程 RET</span>
+                                <span class="text-[9px] font-mono text-slate-300 font-bold">BR163</span>
                             </div>
-                            <div class="flex flex-col items-center flex-1 px-1 sm:px-4 relative">
-                                <span class="text-[8px] text-slate-400 font-mono mb-0.5">2h 25m</span>
-                                <div class="w-full border-t border-dashed border-slate-600 relative my-1">
-                                    <i class="fa-solid fa-plane text-[10px] absolute left-1/2 -top-[6px] -translate-x-1/2 text-sky-400 rotate-90"></i>
+                            <div class="flex justify-between items-center my-1.5">
+                                <div class="text-center">
+                                    <p class="text-sm sm:text-lg font-black font-mono tracking-tighter">PUS</p>
+                                    <p class="hidden sm:block text-[10px] text-slate-400">釜山</p>
                                 </div>
-                                <span class="text-[8px] text-emerald-400 font-bold mt-0.5">7/24 (五)</span>
-                            </div>
-                            <div class="text-center">
-                                <p class="text-base sm:text-lg font-black tracking-wide font-mono">TPE</p>
-                                <p class="text-[8px] sm:text-[10px] text-slate-400">桃園</p>
+                                <div class="flex flex-col items-center flex-1 px-0.5 relative min-w-[35px]">
+                                    <span class="text-[7px] text-slate-400 font-mono scale-90">2h 25m</span>
+                                    <div class="w-full border-t border-dashed border-slate-600 relative my-0.5">
+                                        <i class="fa-solid fa-plane text-[8px] absolute left-1/2 -top-[5px] -translate-x-1/2 text-sky-400 rotate-90"></i>
+                                    </div>
+                                    <span class="text-[7px] text-emerald-400 font-bold scale-90">7/24(五)</span>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-sm sm:text-lg font-black font-mono tracking-tighter">TPE</p>
+                                    <p class="hidden sm:block text-[10px] text-slate-400">桃園</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex justify-between border-t border-slate-800 pt-2 mt-1.5 text-xs">
+                        <div class="flex justify-between border-t border-slate-800 pt-1.5 mt-1 text-[10px]">
                             <div>
-                                <span class="text-[8px] sm:text-[10px] text-slate-400 block">起飛</span>
-                                <span class="font-mono font-bold text-amber-400 text-xs sm:text-sm">19:10</span>
+                                <span class="text-[7px] text-slate-400 block scale-90 origin-left">起飛</span>
+                                <span class="font-mono font-bold text-amber-400 text-xs">19:10</span>
                             </div>
                             <div class="text-right">
-                                <span class="text-[8px] sm:text-[10px] text-slate-400 block">降落</span>
-                                <span class="font-mono font-bold text-amber-400 text-xs sm:text-sm">20:35</span>
+                                <span class="text-[7px] text-slate-400 block scale-90 origin-right">降落</span>
+                                <span class="font-mono font-bold text-amber-400 text-xs">20:35</span>
                             </div>
                         </div>
                     </div>
@@ -452,7 +454,6 @@
                         <span class="font-bold text-theme-primary">08:00 - 09:00</span>
                         <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
                             <span>自然島鹽麵包 (海雲台店)</span>
-                            <!-- 已更換網址 -->
                             <a href="https://naver.me/GKIkL2pY" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
                         </h4>
                     </div>
@@ -474,7 +475,6 @@
                         <span class="font-bold text-theme-primary">11:00 - 13:00</span>
                         <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
                             <span>海雲台 LCT X the SKY 觀景台</span>
-                            <!-- 已更換網址 -->
                             <a href="https://naver.me/539giebQ" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
                         </h4>
                     </div>
@@ -546,7 +546,6 @@
                         <span class="font-bold text-theme-primary">15:00 - 17:00</span>
                         <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
                             <span>小香牛肋排 (Sohyang Galbi)</span>
-                            <!-- 已更換網址 -->
                             <a href="https://naver.me/FOR4jdiq" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
                         </h4>
                     </div>
@@ -554,7 +553,6 @@
                         <span class="font-bold text-theme-primary">17:00 - 21:00</span>
                         <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
                             <span>海雲台大街散步 (Busandang 買隔天麵包)</span>
-                            <!-- 已更換網址 -->
                             <a href="https://naver.me/G0pFZWZR" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
                         </h4>
                     </div>
@@ -627,7 +625,6 @@
                         <span class="font-bold text-theme-primary">17:00 - 19:00</span>
                         <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
                             <span>樂天百貨光復店 & 紅油抄手炸醬麵</span>
-                            <!-- 已更換網址 -->
                             <a href="https://naver.me/5T0Df6ej" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
                         </h4>
                     </div>
@@ -679,7 +676,6 @@
                         <span class="font-bold text-theme-primary">11:00 - 13:00</span>
                         <h4 class="font-bold text-sm mt-0.5 text-theme-textDark flex justify-between items-center">
                             <span>新東亞水產市場 (扎嘎其)</span>
-                            <!-- 已更換網址 -->
                             <a href="https://naver.me/Gjyxvlgx" target="_blank" class="text-naver-500 font-bold flex items-center gap-0.5"><i class="fa-solid fa-map-location-dot"></i> 地圖</a>
                         </h4>
                     </div>
@@ -776,7 +772,7 @@
                 <!-- 分類4: 灰色大行李箱 -->
                 <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200">
                     <h3 class="font-bold text-sm text-gray-800 mb-3 flex justify-between">
-                        <span>🧳 灰色大行李箱</span>
+                        <span>🎒 灰色大行李箱</span>
                         <span class="text-[10px] text-gray-500">托運</span>
                     </h3>
                     <div class="space-y-2 text-xs">
